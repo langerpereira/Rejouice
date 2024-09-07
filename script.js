@@ -58,6 +58,7 @@ function cursorEffect(){
 }
 cursorEffect()
 
+
 function page2Animation() {
     // Animate all elements on the page
     gsap.from(".elem h1", {
@@ -79,4 +80,40 @@ function page2Animation() {
 page2Animation();
 
 
+function page4cursor(){
+    var cursor2 = document.querySelector(".page4 .cursor2");
+var page4content = document.querySelector(".page4");
 
+page4content.addEventListener("mousemove", function(dets) {
+    gsap.to(cursor2, {
+        x: dets.x , 
+        y: dets.y
+    });
+});
+
+page4content.addEventListener("mouseenter", function() {
+    gsap.to(cursor2, {
+        scale: 1,
+        opacity: 1
+    });
+});
+
+page4content.addEventListener("mouseleave", function() {
+    gsap.to(cursor2, {
+        scale: 0,
+        opacity: 0
+    });
+});
+
+}
+page4cursor()
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: true,
+      },
+  });
