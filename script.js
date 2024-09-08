@@ -32,31 +32,82 @@ ScrollTrigger.refresh();
 }
 locoScroll()
 
-function cursorEffect(){
-        var page1Content = document.querySelector(".page1-content")
-    var cursor = document.querySelector(".cursor")
-
-    page1Content.addEventListener("mousemove",function(dets){
-        gsap.to(cursor,{
-            x:dets.x,
-            y:dets.y
-        })
-    })
-
-    page1Content.addEventListener("mouseenter", function(){
-        gsap.to(cursor,{
-            scale:1,
-            opacity:1
-        })
-    })
-    page1Content.addEventListener("mouseleave", function(){
-        gsap.to(cursor,{
-            scale:0,
-            opacity:0
-        })
-    })
-}
-cursorEffect()
+function cursorEffect() {
+    var page1Content = document.querySelector(".page1-content");
+    var cursor = document.querySelector(".cursor");
+    const videoContainer = document.getElementById('fullscreen-video-container');
+    const video = document.getElementById('bgVideo');
+    const closeButton = document.getElementById('close-button');
+  
+ 
+    page1Content.addEventListener("mousemove", function(dets) {
+      gsap.to(cursor, {
+        x: dets.x,
+        y: dets.y
+      });
+    });
+  
+    
+    page1Content.addEventListener("mouseenter", function() {
+      gsap.to(cursor, {
+        scale: 1,
+        opacity: 1
+      });
+    });
+  
+   
+    page1Content.addEventListener("mouseleave", function() {
+      gsap.to(cursor, {
+        scale: 0,
+        opacity: 0
+      });
+    });
+  
+    
+    page1Content.addEventListener('click', () => {
+      videoContainer.style.display = 'block';
+      
+      gsap.to(videoContainer, {
+        opacity: 1,
+        duration: 1
+      });
+  
+      // Play the video
+      video.play();
+  
+      gsap.to(cursor, {
+        scale: 0,
+        opacity: 0,
+        duration: 0.5
+      });
+    });
+  
+    // On click of the close button, hide the video container
+    closeButton.addEventListener('click', () => {
+      gsap.to(videoContainer, {
+        opacity: 0,
+        duration: 1,
+        onComplete: () => {
+          videoContainer.style.display = 'none'; 
+        }
+      });
+  
+      // Pause the video
+      video.pause();
+  
+      gsap.to(cursor, {
+        scale: 1,
+        opacity: 1,
+        duration: 0.5
+      });
+    });
+  }
+  
+  window.addEventListener('DOMContentLoaded', () => {
+    cursorEffect();
+  });
+  
+  
 
 
 function page2Animation() {
@@ -78,6 +129,7 @@ function page2Animation() {
     });
 }
 page2Animation();
+
 
 
 function page4cursor(){
@@ -108,12 +160,103 @@ page4content.addEventListener("mouseleave", function() {
 }
 page4cursor()
 
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: true,
-      },
-  });
+
+function swiper(){
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5, // Display multiple images per slide
+        spaceBetween: 10, // Space between slides
+        loop: true,
+        loopedSlides: 5,
+        autoplay: {
+            delay: 200,
+            disableOnInteraction: true,
+        },
+        speed: 900, // Adjust for smoother transitions
+    });
+}
+swiper()
+
+
+function page7TopAnim(){
+    gsap.from(".page7 .page7-top .top-text h3", {
+      y: 60,
+      scrollTrigger:{
+        scroller:".main",
+        trigger:".page7 .page7-top .top-text h3",
+        start:"top 100%",
+        end:"top 95%",
+        duration:.8,
+        scrub:1
+      }
+    })
+    gsap.to(".page7-top-border", {
+      width: 94+"vw",
+      scrollTrigger:{
+        scroller:".main",
+        trigger:".page7-top-border",
+        start:"top 85%",
+        end:"top 80%",
+        duration:5,
+        scrub:1
+      }
+    });
+    gsap.from(".page7 .page7-bottom .btm-text h2", {
+        y: -120,  // Animates from the top
+        opacity: 0,
+        stagger: 0.2,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".page7",
+          scroller: ".main",
+          start: "top 60%",  // When to start the animation
+          end: "top 27%", 
+        //   markers:"true",   // When to end the animation
+          scrub: 2
+        }
+      });     
+  }
+page7TopAnim()
+
+var tl = gsap.timeline()
+
+tl.from(".loader h3", {
+    x:200,
+    opacity:0,
+    duration:1,
+    stagger:0.1
+})
+tl.to(".loader h3",{
+    opacity:0,
+    x:-10,
+    duration:1,
+    stagger:0.1
+})
+tl.to(".loader",{
+    opacity:0
+})
+tl.from(".page1-content h1 span",{
+    y:100,
+    opacity:0,
+    stagger:0.1,
+    duration:0.5,
+    delay:-0.5
+})
+tl.to(".loader",{
+    display:"none"
+})
+tl.from("footer .footer-bottom h1 span",{
+    y: -120,  // Animates from the top
+        opacity: 0,
+        stagger: 0.2,
+        duration: 1,
+        ease: ".footer-bottom",
+        scrollTrigger: {
+          trigger: ".second ",
+          scroller: ".main",
+          start: "top 20%",  
+          end: "top 2%", 
+        //   markers:"true",   
+          scrub: 2
+        }
+      });

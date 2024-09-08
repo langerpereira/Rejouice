@@ -13,11 +13,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="loader">
+        <h3>Tommorow's</h3>
+        <h3>Brand, </h3>
+        <h3>Today™️ .</h3>
+    </div>
     <div class="main">
         <div id="page1">
             <div class="cursor">
                 <h5>Play Reel</h5>
             </div>
+
+            <div id="fullscreen-video-container">
+                <button id="close-button">X</button>
+                <video id="bgVideo" autoplay loop muted src="Assets/hi.mp4"></video>
+              </div>              
+
+        
             <video autoplay loop muted src="Assets/bg1.mp4"></video>
             <div class="page1-content">
                 <nav>
@@ -33,7 +45,7 @@
         <div class="page2">
             <div class="nav">
                 <div class="elem">
-                    <h1>Full-service creative agency.</h1>
+                    <h1>Strategy & emotion.</h1>
                 </div>
                 <div class="elem">
                     <h1>Paris & San Diego</h1>
@@ -73,6 +85,26 @@
 
         </div>
 
+        <div class="page7">
+            <div class="page7-top">
+                <div class="top-text">
+                    <div><h3>Harnessing emotions</h3></div>
+                    <div><h3>to connect with your audience.</h3></div>
+                </div>
+            </div>
+            <div class="page7-top-border"></div>
+            <div class="page7-bottom">
+                <div class="btm-text"><h2>
+                    <div class="up"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data matters, yet it's emotion that drives</span></div></h2>
+                    <h2><div class="up"><span>buying decisions. We don't believe in 'one size fits</span></div></h2>
+                    <h2><div class="up"><span> all.' Instead, we collaborate closely with our</span></div></h2>
+                    <h2><div class="up"><span> clients to craft unique brand experiences that</span></div></h2>
+                    <h2><div class="up"><span> resonate with their audiences and boost their</span></div></h2>
+                    <h2><div class="up"><span> KPIs.</span></div></h2>
+                </div>
+            </div>
+        </div>
+
         <div class="page4">
 
             <div class="cursor2"><h5>Take it!</h5></div>
@@ -105,26 +137,94 @@
             </div>
             <div class="swiperdiv">
                 <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <img src="https://images.prismic.io/rejouice/57ac2830-96e7-4174-a104-b384126bf98c_fec955552eb681ff6c273774515e6c2e.jpg?auto=compress%2Cformat&fm=webp&width=2048" alt="">
-                        <img src="https://images.prismic.io/rejouice/a19d8427-5008-4dce-afa4-5d66118a0463_d7a851a9d8e2eb36cf93ffe4a6fa3701.jpeg?auto=compress%2Cformat&fm=webp&width=2048" alt="">
-                        <img src="https://images.prismic.io/rejouice/d3289122-3f25-43f3-b140-11a342a484d7_Mask+group+%2838%29.jpg?auto=compress%2Cformat&fm=webp&width=2048" alt="">
-                        <img src="https://images.prismic.io/rejouice/8059f4af-8ba3-4e5f-a14b-ba5ed760963f_Mask+group+%2839%29.jpg?auto=compress%2Cformat&fm=webp&width=2048" alt="">
-                        <img src="https://images.prismic.io/rejouice/36450525-8a76-4a44-b6d4-59c00ad0b50d_RJ-Home-OuraRing-x2.png?auto=compress%2Cformat&fm=webp&width=2048" alt="">
-                      </div>
-                      <div class="swiper-slide">
-                        <img src="https://images.prismic.io/rejouice/57ac2830-96e7-4174-a104-b384126bf98c_fec955552eb681ff6c273774515e6c2e.jpg?auto=compress%2Cformat&fm=webp&width=2048" alt="">
-                        <img src="https://images.prismic.io/rejouice/a19d8427-5008-4dce-afa4-5d66118a0463_d7a851a9d8e2eb36cf93ffe4a6fa3701.jpeg?auto=compress%2Cformat&fm=webp&width=2048" alt="">
-                        <img src="https://images.prismic.io/rejouice/d3289122-3f25-43f3-b140-11a342a484d7_Mask+group+%2838%29.jpg?auto=compress%2Cformat&fm=webp&width=2048" alt="">
-                        <img src="https://images.prismic.io/rejouice/8059f4af-8ba3-4e5f-a14b-ba5ed760963f_Mask+group+%2839%29.jpg?auto=compress%2Cformat&fm=webp&width=2048" alt="">
-                        <img src="https://images.prismic.io/rejouice/36450525-8a76-4a44-b6d4-59c00ad0b50d_RJ-Home-OuraRing-x2.png?auto=compress%2Cformat&fm=webp&width=2048" alt="">
-                      </div>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="https://images.prismic.io/rejouice/57ac2830-96e7-4174-a104-b384126bf98c_fec955552eb681ff6c273774515e6c2e.jpg" alt="">
                     </div>
+                    <div class="swiper-slide">
+                      <img src="https://images.prismic.io/rejouice/a19d8427-5008-4dce-afa4-5d66118a0463_d7a851a9d8e2eb36cf93ffe4a6fa3701.jpeg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="https://images.prismic.io/rejouice/d3289122-3f25-43f3-b140-11a342a484d7_Mask+group+%2838%29.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="https://images.prismic.io/rejouice/8059f4af-8ba3-4e5f-a14b-ba5ed760963f_Mask+group+%2839%29.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="https://images.prismic.io/rejouice/36450525-8a76-4a44-b6d4-59c00ad0b50d_RJ-Home-OuraRing-x2.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://images.prismic.io/rejouice/57ac2830-96e7-4174-a104-b384126bf98c_fec955552eb681ff6c273774515e6c2e.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://images.prismic.io/rejouice/a19d8427-5008-4dce-afa4-5d66118a0463_d7a851a9d8e2eb36cf93ffe4a6fa3701.jpeg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://images.prismic.io/rejouice/d3289122-3f25-43f3-b140-11a342a484d7_Mask+group+%2838%29.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://images.prismic.io/rejouice/8059f4af-8ba3-4e5f-a14b-ba5ed760963f_Mask+group+%2839%29.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://images.prismic.io/rejouice/36450525-8a76-4a44-b6d4-59c00ad0b50d_RJ-Home-OuraRing-x2.png" alt="">
+                      </div>
                   </div>
-            </div>
+                </div>
+              </div>
+              
         </div>
 
+        <footer>
+            <div class="footer-top">
+                <div class="first">
+                    <div class="first-top">
+                        <h2>Relax. We got you.</h2>
+                        <button>Take a seat</button>
+                    </div>
+                    <div class="first-btm">
+                        <h4>San Diego—California</h4>
+                        <h4>Paris—France</h4>
+                    </div>
+                </div>
+                <div class="second">
+                    <div class="second-one">
+                        <div class="span">
+                            <span>Home</span>
+                            <span>Work</span>
+                            <span>About</span>
+                            <span>Services & Models</span>
+                            <span>Contact</span>
+                        </div>
+                        <div class="span1">
+                            <span>biz@rejouice.com</span>
+                        </div>
+                    </div>
+                    <div class="second-two">
+                        <div class="span">
+                            <span>X<i class="ri-arrow-right-up-line"></i></span>
+                            <span>Instagram<i class="ri-arrow-right-up-line"></i></span>
+                            <span>LinkedIn<i class="ri-arrow-right-up-line"></i></span>
+                        </div>
+                        <div class="span1">
+                            <span>© 2024 legal </span>
+                            <!-- only for education purpose / credit goes to - https://rejouice.com/ -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <h1>
+                    <span>R</span>
+                    <span>E</span>
+                    <span>J</span>
+                    <span>O</span>
+                    <span>U</span>
+                    <span>I</span>
+                    <span>C</span>
+                    <span>E</span>
+                </h1>
+            </div>
+        </footer>
 
         </div>
         
